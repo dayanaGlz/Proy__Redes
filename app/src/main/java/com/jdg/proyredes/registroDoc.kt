@@ -3,13 +3,11 @@ package com.jdg.proyredes
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 
-class registro : AppCompatActivity() {
-
+class registroDoc : AppCompatActivity() {
     lateinit var usersDBHelper : UsersDBHelper
 
     private lateinit var correo2: EditText
@@ -18,14 +16,14 @@ class registro : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registro)
-        correo2 = findViewById(R.id.correoIng)
-        contra2 = findViewById(R.id.passIng)
-        telef2 = findViewById(R.id.telefono)
+        setContentView(R.layout.activity_registro_doc)
+        correo2 = findViewById(R.id.correoIngDoc)
+        contra2 = findViewById(R.id.passIngDoc)
+        telef2 = findViewById(R.id.telefonoDoc)
 
         usersDBHelper = UsersDBHelper(this)
 
-        var but:Button = findViewById(R.id.RegPacomp)
+        var but: Button = findViewById(R.id.RegDocomp)
 
         but.setOnClickListener() {
             var correo = correo2.text.toString()
@@ -38,7 +36,6 @@ class registro : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
     fun limpiarDatos(){
         correo2.setText("")
         contra2.setText("")

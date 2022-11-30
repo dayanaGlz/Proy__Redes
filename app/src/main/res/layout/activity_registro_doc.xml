@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registro">
+    tools:context=".registroDoc">
 
     <TextView
         android:id="@+id/textView"
@@ -72,12 +72,12 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Correo"
+                android:text="Cédula"
                 android:textColor="#000000"
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/correoIng"
+                android:id="@+id/correoIngDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -94,7 +94,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/passIng"
+                android:id="@+id/passIngDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -111,7 +111,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/telefono"
+                android:id="@+id/telefonoDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -123,7 +123,7 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/RegPacomp"
+        android:id="@+id/RegDocomp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="108dp"
