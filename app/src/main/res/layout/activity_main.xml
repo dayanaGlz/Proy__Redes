@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/soyDoc"
+        android:id="@+id/btnRegistroDoc"
         android:layout_width="130dp"
         android:layout_height="100dp"
         android:layout_marginStart="48dp"
@@ -19,7 +19,7 @@
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/soyPac"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegDoc"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/appo" />
 
     <Button
-        android:id="@+id/soyPac"
+        android:id="@+id/btnRegDoc"
         android:layout_width="130dp"
         android:layout_height="100dp"
         android:layout_marginEnd="48dp"

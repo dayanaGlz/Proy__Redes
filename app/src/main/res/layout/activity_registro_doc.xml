@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registro">
+    tools:context=".registro_doc">
 
     <TextView
         android:id="@+id/textView"
@@ -36,8 +36,9 @@
         app:layout_constraintGuide_begin="369dp" />
 
     <FrameLayout
-        android:layout_width="326dp"
-        android:layout_height="348dp"
+        android:id="@+id/frameLayout"
+        android:layout_width="329dp"
+        android:layout_height="437dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:background="#FFFFFF"
@@ -47,11 +48,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582">
+        app:layout_constraintVertical_bias="0.42000002">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="352dp"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingStart="10dp"
@@ -73,11 +74,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Correo"
-                android:textColor="#000000"
+                android:textColor="#304FFE"
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/correoIng"
+                android:id="@+id/correoRegDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -86,15 +87,31 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textColor="#304FFE"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/NomRegDoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Contraseña"
-                android:textColor="#000000"
+                android:textColor="#304FFE"
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/passIng"
+                android:id="@+id/passRegDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -106,12 +123,12 @@
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Telefono"
-                android:textColor="#000000"
+                android:text="Cédula"
+                android:textColor="#304FFE"
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/telefono"
+                android:id="@+id/celRegDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -123,10 +140,13 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/soyDoc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
+        android:id="@+id/btnRegistroDoc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="#FFFFFF"
         android:elevation="6dp"
         android:text="Registrarse"
@@ -135,14 +155,14 @@
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

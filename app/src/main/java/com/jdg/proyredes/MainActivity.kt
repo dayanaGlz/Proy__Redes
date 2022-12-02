@@ -10,8 +10,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val doctor: Button =findViewById(R.id.soyDoc)
-        val paciente:Button=findViewById(R.id.soyPac)
+        val doctor: Button =findViewById(R.id.btnRegistroDoc)
+        val paciente:Button=findViewById(R.id.btnRegDoc)
 
         doctor.setOnClickListener(){
             val intent = Intent(this,IngresoDoc::class.java)
