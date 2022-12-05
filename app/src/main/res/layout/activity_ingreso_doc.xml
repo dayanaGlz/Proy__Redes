@@ -77,7 +77,8 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/correoRegDoc"
+
+                android:id="@+id/cedIngDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -95,7 +96,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/passRegDoc"
+                android:id="@+id/passIngDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -105,6 +106,21 @@
 
         </LinearLayout>
     </FrameLayout>
+
+    <Button
+        android:id="@+id/ingresoDoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="212dp"
+        android:backgroundTint="#304FFE"
+        android:elevation="6dp"
+        android:text="Ingresar"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -129,18 +145,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnInDoc" />
-
-    <Button
-        android:id="@+id/btnInDoc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:backgroundTint="#304FFE"
-        android:text="Ingresar"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/ingresoDoc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

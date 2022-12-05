@@ -14,10 +14,16 @@
         android:theme="@style/Theme.ProyRedes"
         tools:targetApi="31">
         <activity
+            android:name=".editarPerfil"
+            android:exported="false" />
+        <activity
             android:name=".perfil_Publico_Doc"
             android:exported="false" />
         <activity
             android:name=".registro_pacien"
+            android:exported="false" />
+        <activity
+            android:name=".registroDoc"
             android:exported="false" />
         <activity
             android:name=".editPerfil"

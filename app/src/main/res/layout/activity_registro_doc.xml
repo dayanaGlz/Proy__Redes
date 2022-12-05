@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".registro_doc">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
@@ -38,7 +39,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="329dp"
-        android:layout_height="437dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:background="#FFFFFF"
@@ -52,7 +53,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingStart="10dp"
@@ -73,6 +74,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:text="Correo"
                 android:textColor="#304FFE"
                 android:textSize="20sp" />
@@ -81,12 +83,11 @@
                 android:id="@+id/correoRegDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textColor="#000000"
+                android:textSize="20sp" />
 
             <TextView
+
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -114,10 +115,8 @@
                 android:id="@+id/passRegDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textColor="#000000"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -128,13 +127,12 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/celRegDoc"
+                android:id="@+id/ceduRegDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="phone"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         </LinearLayout>
     </FrameLayout>
@@ -143,10 +141,10 @@
         android:id="@+id/btnRegistroDoc"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="120dp"
         android:backgroundTint="#FFFFFF"
         android:elevation="6dp"
         android:text="Registrarse"
@@ -155,14 +153,15 @@
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

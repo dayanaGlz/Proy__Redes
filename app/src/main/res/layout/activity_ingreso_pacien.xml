@@ -71,12 +71,12 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nombre de Usuario"
+                android:text="Correo"
                 android:textColor="#1932DA"
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/correoRegDoc"
+                android:id="@+id/correoIngPac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -93,7 +93,8 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/passRegDoc"
+
+                android:id="@+id/passIngPac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -105,6 +106,7 @@
     </FrameLayout>
 
     <Button
+
         android:id="@+id/btnInPacien"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -142,4 +144,5 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnInPacien" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
