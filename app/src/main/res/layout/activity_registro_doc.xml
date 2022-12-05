@@ -128,11 +128,11 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/celRegDoc"
+                android:id="@+id/ceduRegDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="phone"
+                android:inputType="number"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#000000" />
 
