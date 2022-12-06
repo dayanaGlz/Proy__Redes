@@ -10,8 +10,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="80dp"
+        android:layout_width="60dp"
         android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/tono_azul"
         android:elevation="7dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,40 +24,19 @@
         app:layout_constraintVertical_bias="0.0">
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/btnMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:foreground="@mipmap/ic_menu" />
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:background="#FFFFFF"
+            android:text="MENÚ"
+            android:textAlignment="center"
+            android:textColor="#304FFE" />
 
     </LinearLayout>
 
@@ -61,7 +44,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
@@ -95,6 +78,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="180dp"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -150,10 +134,10 @@
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/btnChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="84dp"
         android:clickable="true"
         app:backgroundTint="#ACAFB1"
@@ -162,5 +146,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:maxImageSize="38dp"
         app:srcCompat="@drawable/ic_chat_foreground" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.jdg.proyredes.MenuFragment"
+        android:layout_width="282dp"
+        android:layout_height="673dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

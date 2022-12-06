@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tono_azul"
+    android:padding="30dp"
+    tools:context=".MenuFragment">
+
+    <LinearLayout
+        android:layout_width="358dp"
+        android:layout_height="644dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="#FFFFFF"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnImgPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@mipmap/ic_perfil_round" />
+
+            <Button
+                android:id="@+id/btnNomPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:backgroundTint="#00452929"
+                android:gravity="bottom"
+                android:text="Iniciar Sesion"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="#6200EA"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnBuscaDoc"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#00FFFFFF"
+            android:text="Doctores"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buscaEnferm"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#00FFFFFF"
+            android:text="Enfermedades"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnMensajes"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#00FFFFFF"
+            android:text="Mensajes"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnSalir"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#00FFFFFF"
+            android:gravity="center_vertical"
+            android:text="Cerrar Sesion"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+</FrameLayout>

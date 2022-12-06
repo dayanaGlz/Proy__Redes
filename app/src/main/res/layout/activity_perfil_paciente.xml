@@ -35,17 +35,19 @@
         app:srcCompat="@drawable/ic_home_foreground" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16000003">
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -56,16 +58,6 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="24dp"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:fontFamily="sans-serif-black"
-                android:text="PERFIL"
-                android:textAlignment="center"
-                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -236,5 +228,20 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="403dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="PERFIL"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

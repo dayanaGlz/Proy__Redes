@@ -1,15 +1,11 @@
 package com.jdg.proyredes
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 
-class pag_inicial : AppCompatActivity(),OnFragmentActionsListener{
-
+class perfil_Publico_Doc : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pag_inicial)
-
-
+        setContentView(R.layout.activity_perfil_publico_doc)
     }
-
 }
