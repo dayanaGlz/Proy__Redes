@@ -14,6 +14,9 @@
         android:theme="@style/Theme.ProyRedes"
         tools:targetApi="31">
         <activity
+            android:name=".chat"
+            android:exported="false" />
+        <activity
             android:name=".registroDoc"
             android:exported="false" />
         <activity

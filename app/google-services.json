@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "770075310341",
+    "project_id": "chat-595da",
+    "storage_bucket": "chat-595da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770075310341:android:5aecc36e21de464ce51f6c",
+        "android_client_info": {
+          "package_name": "com.jdg.proyredes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770075310341-2ichqlvpcptle33jtvr3k2mdc9958l56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFppRrPqwYeO3vSt08NUFYEINtIPiLzfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770075310341-2ichqlvpcptle33jtvr3k2mdc9958l56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
