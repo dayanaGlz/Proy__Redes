@@ -10,13 +10,7 @@ class perfilDoc : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_doc)
 
-        val btnEdit:Button= findViewById(R.id.btnEdit)
-        val btnHome:Button= findViewById(R.id.btnInicio)
-
-        btnEdit.setOnClickListener(){
-            val intent = Intent(this,editarPerfil::class.java)
-            startActivity(intent)
-        }
+        val btnHome:Button= findViewById(R.id.btnConfirm)
 
         btnHome.setOnClickListener(){
             val intent = Intent(this,consulta::class.java)

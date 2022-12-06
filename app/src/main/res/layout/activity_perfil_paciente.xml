@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/ic_edit_foreground" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnInicio"
+        android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -85,6 +85,14 @@
                 android:textAlignment="viewStart"
                 android:textSize="18sp" />
 
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
+
             <TextView
                 android:id="@+id/nomDoctxt"
                 android:layout_width="match_parent"
@@ -135,12 +143,27 @@
                 android:text="Sexo"
                 android:textSize="18sp" />
 
+            <EditText
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
+
             <TextView
                 android:id="@+id/passDoctxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword" />
 
             <TextView
                 android:id="@+id/textView7"

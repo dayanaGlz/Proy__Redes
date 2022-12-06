@@ -20,7 +20,7 @@
             android:name=".registro_pacien"
             android:exported="false" />
         <activity
-            android:name=".editPerfil"
+            android:name=".editarPerfil"
             android:exported="false" />
         <activity
             android:name=".perfilPaciente"
