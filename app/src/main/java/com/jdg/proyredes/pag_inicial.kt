@@ -4,12 +4,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
 class pag_inicial : AppCompatActivity(),OnFragmentActionsListener{
+    lateinit var usersDBHelper : UsersDBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pag_inicial)
 
-
+        usersDBHelper = UsersDBHelper(this)
     }
 
 }

@@ -9,7 +9,8 @@ class DBContract {
             val TABLE_NAME = "users"
             val COLUMN_CORREO = "correo"
             val COLUMN_CONTRA = "contra"
-            val COLUMN_TELEF = "telef"
+            val COLUMN_NOMBRE = "nombre"
+            val COLUMN_TEXT = "texto"
         }
     }
 }

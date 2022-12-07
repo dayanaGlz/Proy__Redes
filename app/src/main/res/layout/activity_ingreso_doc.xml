@@ -72,13 +72,13 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cedula"
+                android:text="Correo"
                 android:textColor="#1932DA"
                 android:textSize="20sp" />
 
             <EditText
 
-                android:id="@+id/cedIngDoc"
+                android:id="@+id/correoIngDoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

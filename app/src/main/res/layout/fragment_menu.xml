@@ -21,7 +21,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
             android:background="#FFFFFF"
-            android:gravity="bottom"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageButton
@@ -32,19 +32,29 @@
                 android:backgroundTint="#00FFFFFF"
                 android:src="@mipmap/ic_perfil_round" />
 
-            <Button
-                android:id="@+id/btnNomPerfil"
+            <!--            aqui se muestra el nombre del usuario-->
+            <TextView
+                android:id="@+id/NomPerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
                 android:backgroundTint="#00452929"
-                android:gravity="bottom"
-                android:text="Iniciar Sesion"
+                android:text="Usuario"
                 android:textAlignment="viewStart"
                 android:textAllCaps="false"
                 android:textColor="#6200EA"
                 android:textSize="16sp" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnVerPerf"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#00FFFFFF"
+            android:text="Ver mi perfil"
+            android:textAlignment="textEnd"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btnBuscaDoc"
@@ -56,15 +66,6 @@
             android:textAllCaps="false"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/buscaEnferm"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="#00FFFFFF"
-            android:text="Enfermedades"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnMensajes"
@@ -74,18 +75,17 @@
             android:text="Mensajes"
             android:textAlignment="viewStart"
             android:textAllCaps="false"
-            android:textSize="20sp" />
+            android:textSize="20sp"/>
 
         <Button
             android:id="@+id/btnSalir"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="#00FFFFFF"
-            android:gravity="center_vertical"
             android:text="Cerrar Sesion"
-            android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textSize="20sp"
             android:textStyle="italic" />
+
     </LinearLayout>
 </FrameLayout>

@@ -10,7 +10,7 @@ class IngresoDoc : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingreso_doc)
-        var registro: Button = findViewById(R.id.RegDoc)
+        var registro: Button = findViewById(R.id.btnRegDoc)
 
         registro.setOnClickListener(){
             val intent = Intent(this,registroDoc::class.java)

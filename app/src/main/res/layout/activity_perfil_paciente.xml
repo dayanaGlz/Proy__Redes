@@ -7,47 +7,46 @@
     tools:context=".perfilPaciente">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnEdit"
-        android:layout_width="0dp"
+        android:id="@+id/btnConfirmPac"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="45dp"
+        android:layout_marginStart="100dp"
         android:layout_marginBottom="56dp"
-        android:backgroundTint="#CFD1DA"
+        android:backgroundTint="#00BFA5"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnInicioPac"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:maxImageSize="65dp"
+        app:srcCompat="@drawable/ic_confirm_foreground" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnInicioPac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="#00BFA5"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:maxImageSize="65dp"
-        app:srcCompat="@drawable/ic_edit_foreground" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnInicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="56dp"
-        android:backgroundTint="#CFD1DA"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnEdit"
-        app:layout_constraintHorizontal_bias="0.119"
-        app:layout_constraintStart_toStartOf="parent"
-        app:maxImageSize="65dp"
-        app:srcCompat="@drawable/ic_home_foreground" />
+        app:srcCompat="@drawable/ic_news_foreground" />
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="130dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.16000003">
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -66,15 +65,18 @@
                 android:fontFamily="sans-serif-black"
                 android:text="Id"
                 android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/cedtxt"
+                android:id="@+id/idPactxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:textAlignment="viewStart"
+                android:ems="10"
+                android:hint="Identificador del usuario"
                 android:textSize="19sp" />
+
 
             <TextView
                 android:id="@+id/textView8"
@@ -85,107 +87,15 @@
                 android:textAlignment="viewStart"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/nomDoctxt"
+            <EditText
+                android:id="@+id/nomPactxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:textAlignment="viewStart"
-                android:textSize="19sp" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="Primer Apellido"
-                android:textAlignment="viewStart"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/especDoctxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:textAlignment="viewStart"
-                android:textSize="19sp" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="Segundo Apellido"
-                android:textAlignment="viewStart"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/domicDoctxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:textAlignment="viewStart"
-                android:textSize="19sp" />
-
-            <TextView
-                android:id="@+id/textView27"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="Sexo"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/passDoctxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:textSize="19sp" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="Fecha de Nacimiento"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/telDoctxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:textSize="19sp" />
-
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="Enfermedad"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/apelli1Doc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:textSize="19sp" />
-
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="Email"
-                android:textAlignment="viewStart"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/emailDoctxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="Nombre"
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="19sp" />
 
             <TextView
@@ -193,14 +103,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
-                android:text="Contraseña"
+                android:text="Email"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/apelli2Doc"
+            <EditText
+                android:id="@+id/emailDoctxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="ejemplo@dominio.com"
+                android:inputType="textEmailAddress"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Password"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/passDoctxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="password"
+                android:inputType="textPassword"
                 android:textSize="19sp" />
 
             <TextView
@@ -211,37 +142,86 @@
                 android:text="Condición"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/dispDoctxt"
+            <EditText
+                android:id="@+id/condPactxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="En tratamiento, Con consulta..."
+                android:inputType="textPersonName"
                 android:textSize="19sp" />
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
-                android:text="Disponibilidad"
+                android:text="Enfermedades"
+                android:textAlignment="viewStart"
                 android:textSize="18sp" />
 
+            <EditText
+                android:id="@+id/enfPactxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Asma, Diabetes, Colesterol...etc"
+                android:inputType="textMultiLine"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Teléfono"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/telPactxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="449 123 4567"
+                android:inputType="phone"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Edad"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edadPactxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="en años..."
+                android:inputType="textPersonName"
+                android:textSize="19sp" />
         </LinearLayout>
     </ScrollView>
 
     <TextView
         android:id="@+id/textView19"
-        android:layout_width="403dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:fontFamily="sans-serif-black"
         android:text="PERFIL"
         android:textAlignment="center"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
