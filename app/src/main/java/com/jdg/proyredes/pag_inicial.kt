@@ -32,14 +32,23 @@ class pag_inicial : AppCompatActivity(){
         //capturamos el nombre de usuario que se nos mando desde el inicio de sesion.
         user= intent.getStringExtra("usuarioActivo").toString()
 
-        var btnMenu:Button=findViewById(R.id.btnMenu)
+        var btnMenu:Button = findViewById(R.id.btnMenu)
 
         btnMenu.setOnClickListener(){
-            val intent = Intent(this,pag_inicial::class.java).apply {
-                putExtra(EXTRA_MESSAGE, user)
+            val intent = Intent(this,Menu::class.java).apply {
+                putExtra("usuarioActivo", user)
             }
             startActivity(intent)
         }
+
+        showAllNews(contenedor)
+
+        var btnBuscar:Button = findViewById(R.id.btnMenu)
+
+        btnBuscar.setOnClickListener(){
+            busqueda(contenedor)
+        }
+
     }
 
     fun showAllNews(v: View){

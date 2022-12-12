@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class IngresoPacien : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,15 +27,17 @@ class IngresoPacien : AppCompatActivity() {
         ingreso.setOnClickListener(){
             var correo = correo2.text.toString()
             var contra = contra2.text.toString()
-            var comp:Boolean = usersDBHelper.readUser(correo, contra)
-            if(comp){
+            var comp = usersDBHelper.readUserPacLogin(correo, contra)
+
+            if(comp != null){
                 val intent = Intent(this,pag_inicial::class.java).apply {
-                    putExtra(EXTRA_MESSAGE,correo)
+                    putExtra("usuarioActivo",comp[0].nombre)
                 }
                 startActivity(intent)
             }
             else {
                 //Datos incorrectos
+                Toast.makeText(this, "Fallo en el ingreso.Intente de nuevo", Toast.LENGTH_LONG).show()
             }
         }
     }

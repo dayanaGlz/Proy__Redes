@@ -43,7 +43,7 @@ class DBContract {
     class userPaciente: BaseColumns{
         companion object{
             val TABLE_NAME="paciente"
-            val COLUMN_ID="cedula"
+            val COLUMN_ID="id"
             val COLUMN_NOM="nombre"
             val COLUMN_EMAIL="email"
             val COLUMN_PASS="pass"

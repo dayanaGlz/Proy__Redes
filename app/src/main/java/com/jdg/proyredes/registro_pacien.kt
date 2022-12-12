@@ -28,7 +28,7 @@ class registro_pacien : AppCompatActivity() {
             var correo = correo2.text.toString()
             var contra = contra2.text.toString()
             var nombre = nombre2.text.toString()
-            usersDBHelper.insertUser(UserModel(correo = correo,contra = contra,nombre = nombre, texto = ""))
+            usersDBHelper.insertUserPaciente(UserModel(correo = correo,contra = contra,nombre = nombre, texto = ""))
             //clear all edittext s
             limpiarDatos()
             val intent = Intent(this,IngresoPacien::class.java)

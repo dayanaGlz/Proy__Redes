@@ -27,25 +27,21 @@ class nuevaPublicacion : AppCompatActivity() {
         desc2 = findViewById(R.id.editTextTextDesc)
         url2 = findViewById(R.id.editTextTextURL)
 
+        var titulo = titulo2.text.toString()
+        var tema = tema2.text.toString()
+        var desc = desc2.text.toString()
+        var url = url2.text.toString()
 
         var btn:Button = findViewById(R.id.btnPub)
 
         btn.setOnClickListener(){
-//            val intent = Intent(this,pag_inicial::class.java).apply {
-//                putExtra(AlarmClock.EXTRA_MESSAGE,titulo2)
-//                putExtra(AlarmClock.EXTRA_MESSAGE,tema2)
-//                putExtra(AlarmClock.EXTRA_MESSAGE,desc2)
-//                putExtra(AlarmClock.EXTRA_MESSAGE,url2)
-//            }
-//            startActivity(intent)
+            addNew(titulo, tema, desc, url)
+            val intent = Intent(this,pag_inicial::class.java)
+            startActivity(intent)
         }
     }
-    fun addNew(v: View){
 
-        var titulo2 = titulo2.text.toString()
-        var tema2 = tema2.text.toString()
-        var desc2 = desc2.text.toString()
-        var url2 = url2.text.toString()
+    fun addNew(titulo2:String, tema2:String, desc2:String, url2:String){
 
         var result = usersDBHelper.add_New(UMPublic(tit=titulo2,tema = tema2,cont = desc2,img = url2))
         //clear all edittext s

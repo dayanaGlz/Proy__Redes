@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteConstraintException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
-import android.icu.text.CaseMap
 
 import java.util.ArrayList
 
@@ -35,29 +34,77 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
     }
 
     @Throws(SQLiteConstraintException::class)
-    fun insertUser(user: UserModel): Boolean {
+    fun insertUserPaciente(user: UserModel): Boolean {
         //Obtenemos la base de datos para escribir
         val db = writableDatabase
         // Creamos un ContentValues, para asignar los valores a insertar
         val values = ContentValues()
-        values.put(DBContract.userDoctor.COLUMN_EMAIL, user.correo)
-        values.put(DBContract.userDoctor.COLUMN_PASS, user.contra)
-        values.put(DBContract.userDoctor.COLUMN_NOM, user.nombre)
-        values.put(DBContract.userDoctor.COLUMN_CEDULA, user.texto)
+        values.put(DBContract.userPaciente.COLUMN_ID, "")
+        values.put(DBContract.userPaciente.COLUMN_NOM, user.nombre)
+        values.put(DBContract.userPaciente.COLUMN_EMAIL, user.correo)
+        values.put(DBContract.userPaciente.COLUMN_PASS, user.contra)
+        values.put(DBContract.userPaciente.COLUMN_COND, "")
+        values.put(DBContract.userPaciente.COLUMN_ENFERM, "")
+        values.put(DBContract.userPaciente.COLUMN_TELEFONO, "")
+        values.put(DBContract.userPaciente.COLUMN_EDAD, "")
 
         //Insertamos el nuevo registro
-        val newRowId = db.insert(DBContract.userDoctor.TABLE_NAME, null, values)
+        val newRowId = db.insert(DBContract.userPaciente.TABLE_NAME, null, values)
 
         return true
     }
 
     @Throws(SQLiteConstraintException::class)
-    fun updateUser(cedula: String, texto: String): Boolean {
+    fun insertUserDoctor(user: UserModel): Boolean {
+        //Obtenemos la base de datos para escribir
+        val db = writableDatabase
+        // Creamos un ContentValues, para asignar los valores a insertar
+        val values = ContentValues()
+        values.put(DBContract.userDoctor.COLUMN_CEDULA, "")
+        values.put(DBContract.userDoctor.COLUMN_NOM, user.nombre)
+        values.put(DBContract.userDoctor.COLUMN_ESPEC, "")
+        values.put(DBContract.userDoctor.COLUMN_DOMICILIO, "")
+        values.put(DBContract.userDoctor.COLUMN_TELEFONO, "")
+        values.put(DBContract.userDoctor.COLUMN_EMAIL, user.correo)
+        values.put(DBContract.userDoctor.COLUMN_PASS, user.contra)
+        values.put(DBContract.userDoctor.COLUMN_DISP, "")
+
+        //Insertamos el nuevo registro
+        val newRowId = db.insert(DBContract.userPaciente.TABLE_NAME, null, values)
+
+        return true
+    }
+
+    @Throws(SQLiteConstraintException::class)
+    fun updateUserPac(id: String, nom: String, email: String, pass: String, cond: String, enfer: String): Boolean {
         //Obtenemos la base de datos para escribir
         val db = writableDatabase
         // Creamos el query para buscar llave a modificar
         val registro = ContentValues()
-        registro.put("texto", texto)
+        registro.put("nom", nom)
+        registro.put("email", email)
+        registro.put("pass", pass)
+        registro.put("cond", cond)
+        registro.put("enfer", enfer)
+
+        // Modificamos el registro
+        db.update(
+            DBContract.userPaciente.TABLE_NAME, registro,
+            "id=${id}", null
+        )
+
+        return true
+    }
+
+    fun updateUserDoc(cedula: String, nom: String, espec: String, domicilio: String, tel: String): Boolean {
+        //Obtenemos la base de datos para escribir
+        val db = writableDatabase
+        // Creamos el query para buscar llave a modificar
+        val registro = ContentValues()
+        registro.put("nom", nom)
+        registro.put("espec", espec)
+        registro.put("domicilio", domicilio)
+        registro.put("tel", tel)
 
         // Modificamos el registro
         db.update(
@@ -70,16 +117,16 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 
     //leer el usuario doctor
     @SuppressLint("Range")
-    fun readUserDoc(correo: String, contra: String): ArrayList<UserModel> {
+    fun readUserDocLogin(correo: String, contra: String): ArrayList<UserModel> {
         val doctor = ArrayList<UserModel>()
         val db = writableDatabase
         var cursor: Cursor? = null
         try {
             cursor = db.rawQuery(
-                "select * from " + DBContract.userDoctor.TABLE_NAME
-                        + " WHERE " + DBContract.userDoctor.COLUMN_EMAIL + "='"
+                "select * from " + DBContract.userPaciente.TABLE_NAME
+                        + " WHERE " + DBContract.userPaciente.COLUMN_EMAIL + "='"
                         + correo + "'"
-                        + " AND " + DBContract.userDoctor.COLUMN_PASS + "='"
+                        + " AND " + DBContract.userPaciente.COLUMN_PASS + "='"
                         + contra + "'", null
             )
         } catch (e: SQLiteException) {
@@ -91,7 +138,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         var texto: String
         if (cursor!!.moveToFirst()) {
             while (cursor.isAfterLast == false) {
-                nombre = cursor.getString(cursor.getColumnIndex(DBContract.userDoctor.COLUMN_NOM))
+                nombre = cursor.getString(cursor.getColumnIndex(DBContract.userPaciente.COLUMN_NOM))
                 //en esta ocasion usaremos el campo texto para poder guardar la cedula y asi no crear otro modelo
                 texto = cursor.getString(cursor.getColumnIndex(DBContract.userDoctor.COLUMN_CEDULA))
 
@@ -102,6 +149,128 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         return doctor
     }
 
+    //Leer si pusieron correo y contra correcta
+    @SuppressLint("Range")
+    fun readUserPacLogin(correo: String, contra: String): ArrayList<UserModel> {
+        val paciente = ArrayList<UserModel>()
+        val db = writableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery(
+                "select * from " + DBContract.userPaciente.TABLE_NAME
+                        + " WHERE " + DBContract.userPaciente.COLUMN_EMAIL + "='"
+                        + correo + "'"
+                        + " AND " + DBContract.userPaciente.COLUMN_PASS + "='"
+                        + contra + "'", null
+            )
+        } catch (e: SQLiteException) {
+            // si la BBD no esta creada, la creamos
+            db.execSQL(SQL_CREATE_ENTRIES_DOC)
+        }
+
+        var nombre: String
+        var texto: String
+        if (cursor!!.moveToFirst()) {
+            while (cursor.isAfterLast == false) {
+                nombre = cursor.getString(cursor.getColumnIndex(DBContract.userPaciente.COLUMN_NOM))
+                //en esta ocasion usaremos el campo texto para poder guardar la cedula y asi no crear otro modelo
+                texto = cursor.getString(cursor.getColumnIndex(DBContract.userPaciente.COLUMN_ID))
+
+                paciente.add(UserModel(correo, contra, nombre, texto))
+                cursor.moveToNext()
+            }
+        }
+        return paciente
+    }
+
+    @SuppressLint("Range")
+    fun readUserPac(nom: String): ArrayList<String> {
+        val users = ArrayList<String>()
+        val db = writableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery("select * from " + DBContract.userPaciente.TABLE_NAME
+                    + " WHERE " + DBContract.userPaciente.COLUMN_NOM + "='"
+                    + nom + "'", null)
+        } catch (e: SQLiteException) {
+            // si la BBD no esta creada, la creamos
+            db.execSQL(SQL_CREATE_ENTRIES_PAC)
+        }
+
+        var id: String
+        var nom:String
+        var email: String
+        var pass: String
+        var cond: String
+        var enferm: String
+
+        if (cursor!!.moveToFirst()) {
+            while (cursor.isAfterLast == false) {
+                id = cursor.getString(cursor.getColumnIndex(DBContract.userPaciente.COLUMN_ID))
+                nom = cursor.getString(cursor.getColumnIndex(DBContract.userPaciente.COLUMN_NOM))
+                email = cursor.getString(cursor.getColumnIndex(DBContract.userPaciente.COLUMN_EMAIL))
+                pass = cursor.getString(cursor.getColumnIndex(DBContract.userPaciente.COLUMN_PASS))
+                cond = cursor.getString(cursor.getColumnIndex(DBContract.userPaciente.COLUMN_COND))
+                enferm = cursor.getString(cursor.getColumnIndex(DBContract.userPaciente.COLUMN_ENFERM))
+                users.add(id)
+                users.add(nom)
+                users.add(email)
+                users.add(pass)
+                users.add(cond)
+                users.add(enferm)
+                cursor.moveToNext()
+            }
+        }
+        return users
+    }
+
+    @SuppressLint("Range")
+    fun readUserDoc(nom: String): ArrayList<String> {
+        val users = ArrayList<String>()
+        val db = writableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery("select * from " + DBContract.userDoctor.TABLE_NAME
+                    + " WHERE " + DBContract.userPaciente.COLUMN_NOM + "='"
+                    + nom + "'", null)
+        } catch (e: SQLiteException) {
+            // si la BBD no esta creada, la creamos
+            db.execSQL(SQL_CREATE_ENTRIES_PAC)
+        }
+
+        var cedula: String
+        var nom:String
+        var espec: String
+        var domicilio: String
+        var tel: String
+        var email: String
+
+        val COLUMN_CEDULA="cedula"
+        val COLUMN_NOM="nombre"
+        val COLUMN_ESPEC="espec"
+        val COLUMN_DOMICILIO="domicilio"
+        val COLUMN_TELEFONO="tel"
+        val COLUMN_EMAIL="email"
+
+        if (cursor!!.moveToFirst()) {
+            while (cursor.isAfterLast == false) {
+                cedula = cursor.getString(cursor.getColumnIndex(DBContract.userDoctor.COLUMN_CEDULA))
+                nom = cursor.getString(cursor.getColumnIndex(DBContract.userDoctor.COLUMN_NOM))
+                espec = cursor.getString(cursor.getColumnIndex(DBContract.userDoctor.COLUMN_ESPEC))
+                domicilio = cursor.getString(cursor.getColumnIndex(DBContract.userDoctor.COLUMN_DOMICILIO))
+                tel = cursor.getString(cursor.getColumnIndex(DBContract.userDoctor.COLUMN_TELEFONO))
+                email = cursor.getString(cursor.getColumnIndex(DBContract.userDoctor.COLUMN_EMAIL))
+                users.add(cedula)
+                users.add(nom)
+                users.add(espec)
+                users.add(domicilio)
+                users.add(tel)
+                users.add(email)
+                cursor.moveToNext()
+            }
+        }
+        return users
+    }
 
     //para agregar las publicaciones
     @Throws(SQLiteConstraintException::class)
@@ -121,6 +290,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         return true
     }
 
+    //Leer todas las publicaciones
     @SuppressLint("Range")
     fun readNews(): ArrayList<UMPublic> { //crearemos un modelo para las public.
         val news = ArrayList<UMPublic>()
@@ -151,6 +321,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         return news
     }
 
+    //Leer una noticia por palabra clave
     @SuppressLint("Range")
     fun read_new(palabra: String): ArrayList<UMPublic>{
         val news = ArrayList<UMPublic>()
@@ -218,7 +389,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
                     DBContract.userPaciente.COLUMN_EDAD + " INTEGER)"
 
         private val SQL_CREATE_ENTRIES_DOC =
-            "CREATE TABLE " + DBContract.userDoctor.TABLE_NAME + " (" +
+            "CREATE TABLE " + DBContract.userPaciente.TABLE_NAME + " (" +
                     DBContract.userDoctor.COLUMN_CEDULA + " TEXT PRIMARY KEY," +
                     DBContract.userDoctor.COLUMN_NOM + " TEXT," +
                     DBContract.userDoctor.COLUMN_ESPEC + " TEXT," +
@@ -237,7 +408,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 
 
         private val SQL_DELETE_PUBLIC = "DROP TABLE IF EXISTS " + DBContract.userPubli.TABLE_NAME;
-        private val SQL_DELETE_ENTRIES_DOC = "DROP TABLE IF EXISTS " + DBContract.userDoctor.TABLE_NAME;
+        private val SQL_DELETE_ENTRIES_DOC = "DROP TABLE IF EXISTS " + DBContract.userPaciente.TABLE_NAME;
         private val SQL_DELETE_ENTRIES_PAC = "DROP TABLE IF EXISTS " + DBContract.userPaciente.TABLE_NAME;
     }
 }

@@ -35,18 +35,18 @@ class IngresoDoc : AppCompatActivity() {
         ingreso.setOnClickListener(){
             var correo = correo2.text.toString()
             var contra = contra2.text.toString()
-            var doctorActivo = usersDBHelper.readUserDoc(correo, contra)
+            var doctorActivo = usersDBHelper.readUserDocLogin(correo, contra)
 
 
             if(doctorActivo!=null){
                 val intent = Intent(this,pag_inicial::class.java).apply {
-                    putExtra(EXTRA_MESSAGE,doctorActivo)
+                    putExtra("usuarioActivo",doctorActivo[0].nombre)
                 }
                 startActivity(intent)
             }
             else {
                 //Datos incorrectos
-                Toast.makeText(this, "Fallo en el registro.Intente de nuevo", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Fallo en el ingreso.Intente de nuevo", Toast.LENGTH_LONG).show()
             }
         }
     }
