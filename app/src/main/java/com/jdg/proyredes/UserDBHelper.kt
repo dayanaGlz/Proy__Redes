@@ -70,7 +70,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         values.put(DBContract.userDoctor.COLUMN_DISP, "")
 
         //Insertamos el nuevo registro
-        val newRowId = db.insert(DBContract.userPaciente.TABLE_NAME, null, values)
+        val newRowId = db.insert(DBContract.userDoctor.TABLE_NAME, null, values)
 
         return true
     }
@@ -123,10 +123,10 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         var cursor: Cursor? = null
         try {
             cursor = db.rawQuery(
-                "select * from " + DBContract.userPaciente.TABLE_NAME
-                        + " WHERE " + DBContract.userPaciente.COLUMN_EMAIL + "='"
+                "select * from " + DBContract.userDoctor.TABLE_NAME
+                        + " WHERE " + DBContract.userDoctor.COLUMN_EMAIL + "='"
                         + correo + "'"
-                        + " AND " + DBContract.userPaciente.COLUMN_PASS + "='"
+                        + " AND " + DBContract.userDoctor.COLUMN_PASS + "='"
                         + contra + "'", null
             )
         } catch (e: SQLiteException) {
@@ -138,7 +138,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         var texto: String
         if (cursor!!.moveToFirst()) {
             while (cursor.isAfterLast == false) {
-                nombre = cursor.getString(cursor.getColumnIndex(DBContract.userPaciente.COLUMN_NOM))
+                nombre = cursor.getString(cursor.getColumnIndex(DBContract.userDoctor.COLUMN_NOM))
                 //en esta ocasion usaremos el campo texto para poder guardar la cedula y asi no crear otro modelo
                 texto = cursor.getString(cursor.getColumnIndex(DBContract.userDoctor.COLUMN_CEDULA))
 
@@ -231,7 +231,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         var cursor: Cursor? = null
         try {
             cursor = db.rawQuery("select * from " + DBContract.userDoctor.TABLE_NAME
-                    + " WHERE " + DBContract.userPaciente.COLUMN_NOM + "='"
+                    + " WHERE " + DBContract.userDoctor.COLUMN_NOM + "='"
                     + nom + "'", null)
         } catch (e: SQLiteException) {
             // si la BBD no esta creada, la creamos
@@ -244,13 +244,6 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         var domicilio: String
         var tel: String
         var email: String
-
-        val COLUMN_CEDULA="cedula"
-        val COLUMN_NOM="nombre"
-        val COLUMN_ESPEC="espec"
-        val COLUMN_DOMICILIO="domicilio"
-        val COLUMN_TELEFONO="tel"
-        val COLUMN_EMAIL="email"
 
         if (cursor!!.moveToFirst()) {
             while (cursor.isAfterLast == false) {
